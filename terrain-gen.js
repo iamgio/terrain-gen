@@ -24,18 +24,22 @@ function setup() {
 
 function draw() {
     background(0);
-    noFill();
     strokeWeight(0.7);
+    colorMode(HSB);
 
     translate(-COLS * TILE_SIZE / 2, TRANSLATION_Y, TRANSLATION_Z);
 
     rotateX(0.9);
 
     for (let y = 0; y < ROWS - 1; y++) {
-        stroke(10 + y * 8); // Perspective fading
+        //stroke(10 + y * 8); // Perspective fading
         beginShape(TRIANGLE_STRIP);
         for (let x = 0; x < COLS; x++) {
-            vertex(x * TILE_SIZE, y * TILE_SIZE, heights[x][y]);
+            const height = heights[x][y];
+            const color = getColor(height);
+            fill(color.hue, color.saturation, color.brightness);
+            
+            vertex(x * TILE_SIZE, y * TILE_SIZE, height);
             vertex(x * TILE_SIZE, (y + 1) * TILE_SIZE, heights[x][y + 1]);
         }
         endShape();
