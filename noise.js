@@ -1,5 +1,5 @@
 function perlin(x, y) {
-    return noise(x, y) * 2 - 2;
+    return noise(x, y) * 3 - 2;
 }
 
 function noise2D(x, y, parameters) {
