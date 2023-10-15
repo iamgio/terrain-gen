@@ -8,17 +8,14 @@ const ROWS = 40;
 const COLS = 40;
 const TILE_SIZE = 40;
 
-const RANDOM_MAX = 50;
-
-const heights = [];
+const heights = Array(COLS).fill().map(() => Array(ROWS).fill(0));
 
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
 
     for (let x = 0; x < COLS; x++) {
-        heights[x] = [];
         for (let y = 0; y < ROWS; y++) {
-            heights[x][y] = Math.random() * RANDOM_MAX;
+            heights[x][y] = generateHeight(x, y);
         }
     }
 }
