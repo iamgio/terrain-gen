@@ -8,16 +8,12 @@ const ROWS = 40;
 const COLS = 40;
 const TILE_SIZE = 40;
 
-const heights = Array(COLS).fill().map(() => Array(ROWS).fill(0));
+let heights;
 
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
 
-    for (let x = 0; x < COLS; x++) {
-        for (let y = 0; y < ROWS; y++) {
-            heights[x][y] = generateHeight(x, y);
-        }
-    }
+    heights = createMatrix(COLS, ROWS, (x, y) => generateHeight(x, y));
 }
 
 function draw() {

@@ -1,4 +1,14 @@
 /**
+ * @param {*} width width of the matrix
+ * @param {*} height height of the matrix
+ * @param {*} value optional (x, y) function to fill the matrix with
+ * @returns a new width x height matrix
+ */
+function createMatrix(width, height, value) {
+    return Array(width).fill().map((_, x) => Array(height).fill().map((_, y) => value ? value(x, y) : 0));
+}
+
+/**
  * Interpolates a point using bilinear sampling.
  * @param {*} matrix matrix of source points
  * @returns interpolated value

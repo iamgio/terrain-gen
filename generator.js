@@ -1,3 +1,6 @@
+const HEIGHTMAP_WIDTH = 5;
+const HEIGHTMAP_HEIGHT = 5;
+
 const heightmap = [
     [0, 0, 100, 0, 0],
     [0, 200, 10, 0, 200],
