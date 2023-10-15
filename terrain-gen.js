@@ -13,6 +13,7 @@ let heights;
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
 
+    initHeightmap();
     heights = createMatrix(COLS, ROWS, (x, y) => generateHeight(x, y));
 }
 
