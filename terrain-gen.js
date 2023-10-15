@@ -10,7 +10,7 @@ const TILE_SIZE = 40;
 
 const RANDOM_MAX = 50;
 
-let heights = [];
+const heights = [];
 
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
@@ -26,7 +26,6 @@ function setup() {
 function draw() {
     background(0);
     noFill();
-    stroke(255);
     strokeWeight(0.7);
 
     translate(-COLS * TILE_SIZE / 2, TRANSLATION_Y, TRANSLATION_Z);
@@ -34,6 +33,7 @@ function draw() {
     rotateX(0.9);
 
     for (let y = 0; y < ROWS - 1; y++) {
+        stroke(10 + y * 8); // Perspective fading
         beginShape(TRIANGLE_STRIP);
         for (let x = 0; x < COLS; x++) {
             vertex(x * TILE_SIZE, y * TILE_SIZE, heights[x][y]);
