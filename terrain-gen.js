@@ -1,20 +1,25 @@
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 500;
 
-const TRANSLATION_Y = -700;
-const TRANSLATION_Z = -1400;
+const TRANSLATION_Y = -500;
+const TRANSLATION_Z = -1700;
 
-const ROWS = 40;
-const COLS = 40;
-const TILE_SIZE = 40;
+const ROWS = 80;
+const COLS = 80;
+const TILE_SIZE = 20;
+
+const SEED = 23
 
 let heights;
 
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
+    noiseSeed(SEED);
 
     initHeightmap();
     heights = createMatrix(COLS, ROWS, (x, y) => generateHeight(x, y));
+
+    console.log(heights);
 }
 
 function draw() {
