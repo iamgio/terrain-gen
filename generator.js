@@ -1,5 +1,5 @@
-const HEIGHTMAP_WIDTH = 15;
-const HEIGHTMAP_HEIGHT = 15;
+const HEIGHTMAP_WIDTH = 40;
+const HEIGHTMAP_HEIGHT = 40;
 
 const AMPLIFICATION = 300;
 
@@ -7,9 +7,9 @@ const AMPLIFICATION = 300;
  * Parameters that define the produced noise
  */
 const noiseParameters = {
-    scale: 30,          // Area taken by a spike
-    persistence: 2,     // Spike details
-    octaves: 3,         // Smoothness
+    scale: 50,          // Area taken by a spike
+    persistence: 1,     // Spike details
+    octaves: 2,         // Smoothness
     exponentiation: 2,  // Amplitude
     height: 30,         // Maximum height
     lacunarity: 3,      // Frequency of spikes
