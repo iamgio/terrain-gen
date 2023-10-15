@@ -3,8 +3,11 @@ const HEIGHTMAP_HEIGHT = 15;
 
 const AMPLIFICATION = 300;
 
+/**
+ * Parameters that define the produced noise
+ */
 const noiseParameters = {
-    scale: 30,          // Amount of spikes
+    scale: 30,          // Area taken by a spike
     persistence: 2,     // Spike details
     octaves: 3,         // Smoothness
     exponentiation: 2,  // Amplitude
@@ -13,8 +16,15 @@ const noiseParameters = {
     func: perlin        // Noise function to use
 }
 
+/**
+ * A small matrix that keeps information about altitude and that is then
+ * adapted onto the bigger terrain matrix by interpolating its points.
+ */
 let heightmap;
 
+/**
+ * Initializes the heightmap
+ */
 function initHeightmap() {
     heightmap = createMatrix(
         HEIGHTMAP_WIDTH, HEIGHTMAP_HEIGHT,
