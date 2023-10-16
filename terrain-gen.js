@@ -1,14 +1,23 @@
+// Canvas size
 const CANVAS_WIDTH = 800;
 const CANVAS_HEIGHT = 500;
 
+// Camera position
 const TRANSLATION_Y = -500;
 const TRANSLATION_Z = -1700;
 
+// Terrain size
 const ROWS = 80;
 const COLS = 80;
+
+// Size of a single tile
 const TILE_SIZE = 20;
 
+// Noise seed
 const SEED = 23
+
+// Show wireframe
+const WIREFRAME = true;
 
 let heights;
 
@@ -24,7 +33,7 @@ function setup() {
 
 function draw() {
     background(0);
-    strokeWeight(0.7);
+    strokeWeight(WIREFRAME ? 0.7 : 0);
     colorMode(HSB);
 
     translate(-COLS * TILE_SIZE / 2, TRANSLATION_Y, TRANSLATION_Z);
