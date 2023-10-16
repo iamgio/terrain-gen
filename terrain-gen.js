@@ -7,11 +7,11 @@ const TRANSLATION_Y = -500;
 const TRANSLATION_Z = -1700;
 
 // Terrain size
-const ROWS = 80;
-const COLS = 80;
+const ROWS = 200;
+const COLS = 200;
 
 // Size of a single tile
-const TILE_SIZE = 20;
+const TILE_SIZE = 8;
 
 // Show wireframe
 const WIREFRAME = true;
@@ -60,7 +60,7 @@ function render() {
                 fill(color.hue, color.saturation, color.brightness);
             } else {
                 fill(0);
-                stroke(10 + y * 8); // Perspective fading
+                stroke(10 + y * 2); // Perspective fading
             }
             
             vertex(x * TILE_SIZE, y * TILE_SIZE, height);

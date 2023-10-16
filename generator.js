@@ -1,5 +1,5 @@
-const HEIGHTMAP_WIDTH = 40;
-const HEIGHTMAP_HEIGHT = 40;
+const HEIGHTMAP_WIDTH = 100;
+const HEIGHTMAP_HEIGHT = 100;
 
 const AMPLIFICATION = 300;
 
@@ -7,12 +7,12 @@ const AMPLIFICATION = 300;
  * Parameters that define the produced noise
  */
 const noiseParameters = {
-    seed: 23,           // Random seed
-    scale: 50,          // Area taken by a spike
-    persistence: 1,     // Spike details
-    octaves: 2,         // Smoothness
+    seed: 5,           // Random seed
+    scale: 150,         // Area taken by a spike
+    persistence: 1.1,     // Spike details
+    octaves: 3,         // Smoothness
     exponentiation: 2,  // Amplitude
-    height: 30,         // Maximum height
+    height: 15,         // Maximum height
     lacunarity: 3,      // Frequency of spikes
     func: perlin        // Noise function to use
 }
