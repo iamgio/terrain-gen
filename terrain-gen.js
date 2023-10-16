@@ -13,9 +13,6 @@ const COLS = 80;
 // Size of a single tile
 const TILE_SIZE = 20;
 
-// Noise seed
-const SEED = 23
-
 // Show wireframe
 const WIREFRAME = true;
 
@@ -30,7 +27,6 @@ let heights;
 
 function setup() {
     createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL).parent('canvas-container');
-    noiseSeed(SEED);
 
     initHeightmap();
     heights = createMatrix(COLS, ROWS, (x, y) => generateHeight(x, y));

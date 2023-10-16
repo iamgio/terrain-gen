@@ -5,3 +5,4 @@ function setInfo(key, value) {
 setInfo('grid-size', COLS + 'x' + ROWS);
 setInfo('heightmap-size', HEIGHTMAP_WIDTH + 'x' + HEIGHTMAP_HEIGHT);
 setInfo('noise-parameters', JSON.stringify(noiseParameters));
+setInfo('static', STATIC);

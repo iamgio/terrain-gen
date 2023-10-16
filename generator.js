@@ -7,6 +7,7 @@ const AMPLIFICATION = 300;
  * Parameters that define the produced noise
  */
 const noiseParameters = {
+    seed: 23,           // Random seed
     scale: 50,          // Area taken by a spike
     persistence: 1,     // Spike details
     octaves: 2,         // Smoothness
@@ -26,6 +27,8 @@ let heightmap;
  * Initializes the heightmap
  */
 function initHeightmap() {
+    noiseSeed(noiseParameters.seed);
+
     heightmap = createMatrix(
         HEIGHTMAP_WIDTH, HEIGHTMAP_HEIGHT,
         (x, y) => noise2D(x, y, noiseParameters)
