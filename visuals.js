@@ -5,7 +5,7 @@
 function getColor(height) {
     return {
         hue: 120 - height / 4,
-        saturation: 80 - height / 4,
-        brightness: height / 8 + 20
+        saturation: 80 - height * height / 2100,
+        brightness: 20 + height / 8
     }
 }
