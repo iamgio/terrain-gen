@@ -19,6 +19,9 @@ const SEED = 23
 // Show wireframe
 const WIREFRAME = true;
 
+// Show terrain colors
+const COLORIZE = true;
+
 let heights;
 
 function setup() {
@@ -41,12 +44,16 @@ function draw() {
     rotateX(0.9);
 
     for (let y = 0; y < ROWS - 1; y++) {
-        //stroke(10 + y * 8); // Perspective fading
         beginShape(TRIANGLE_STRIP);
         for (let x = 0; x < COLS; x++) {
             const height = heights[x][y];
-            const color = getColor(height);
-            fill(color.hue, color.saturation, color.brightness);
+            if (COLORIZE) {
+                const color = getColor(height);
+                fill(color.hue, color.saturation, color.brightness);
+            } else {
+                fill(0);
+                stroke(10 + y * 8); // Perspective fading
+            }
             
             vertex(x * TILE_SIZE, y * TILE_SIZE, height);
             vertex(x * TILE_SIZE, (y + 1) * TILE_SIZE, heights[x][y + 1]);
