@@ -29,7 +29,7 @@ const STATIC = true;
 let heights;
 
 function setup() {
-    createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL);
+    createCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, WEBGL).parent('canvas-container');
     noiseSeed(SEED);
 
     initHeightmap();

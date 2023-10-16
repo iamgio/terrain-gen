@@ -15,10 +15,23 @@
         body {
             background-color: rgb(20, 20, 20);
         }
+        p {
+            color: white;
+            opacity: .5;
+            font-family: monospace;
+            line-height: 1.4;
+        }
     </style>
 </head>
 
 <body>
+<div id="canvas-container"></div>
+<p>
+    <strong>Grid size: </strong><span id="info-grid-size"></span><br>
+    <strong>Heightmap size: </strong><span id="info-heightmap-size"></span><br>
+    <strong>Noise parameters: </strong><span id="info-noise-parameters"></span><br>
+</p>
+<script src="info-display.js"></script>
 </body>
 
 </html>
