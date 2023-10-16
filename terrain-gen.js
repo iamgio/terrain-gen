@@ -22,6 +22,10 @@ const WIREFRAME = true;
 // Show terrain colors
 const COLORIZE = true;
 
+// Whether the scene should be rendered only once (better power consumption) or every frame
+const STATIC = true;
+
+// COLSxROWS matrix for storing height data
 let heights;
 
 function setup() {
@@ -31,10 +35,18 @@ function setup() {
     initHeightmap();
     heights = createMatrix(COLS, ROWS, (x, y) => generateHeight(x, y));
 
-    console.log(heights);
+    if (STATIC) {
+        render();
+    }
 }
 
 function draw() {
+    if (!STATIC) {
+        render();
+    }
+}
+
+function render() {
     background(0);
     strokeWeight(WIREFRAME ? 0.7 : 0);
     colorMode(HSB);
